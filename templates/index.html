@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Deployment Tutorial 1</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css">
+      </head>
+<body>
+ <div class="login">
+	<h1>Sales Forecasting</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Name" placeholder="Name" required="required" /><br>
+    	<input type="text" name="age" placeholder="age" required="required" /><br>
+      <input type="text" name="Job" placeholder="Job" required="required" /><br>
+      <label for="marital">Choose one:</label>
+      <select name="marital" id="marital">
+      <option value="married">married</option>
+      <option value="single">single</option>
+      <option value="divorced">divorced</option>
+      </select>
+      <label for="education">Choose one:</label>
+      <select name="education" id="education">
+      <option value="primary">primary</option>
+      <option value="secondary">secondary</option>
+      <option value="tertiary">tertiary</option>
+      <option value="unknown">unknown</option>
+      </select>
+      <input type="text" name="balance" placeholder="balance" required="required" /><br>
+      <p>Default</p>
+        <input type="radio" id="yes" name="Default" value="yes">
+        <label for="html">YES</label><br>
+        <input type="radio" id="no" name="Default" value="No">
+        <label for="css">NO</label><br>
+      <p>Housing</p>
+      <input type="radio" id="yes" name="Housing" value="yes">
+      <label for="html">YES</label><br>
+      <input type="radio" id="no" name="Housing" value="No">
+      <label for="css">NO</label><br>
+      <p>Loan</p>
+      <input type="radio" id="yes" name="Loan" value="yes">
+      <label for="html">YES</label><br>
+      <input type="radio" id="no" name="Loan" value="No">
+      <label for="css">NO</label><br>
+      <select name="contact" id="contact">
+      <option value="unknown">unknown</option>
+      <option value="cellular">cellular</option>
+      <option value="telephone">telephone</option>
+      </select>
+      <input type="text" name="day" placeholder="day" required="required" /><br>
+      <input type="text" name="duration	" placeholder="duration	" required="required" /><br>
+      <input type="text" name="campaign" placeholder="campaign" required="required" /><br>
+      <input type="text" name="pdays" placeholder="pdays" required="required" /><br>
+      <input type="text" name="previous" placeholder="previous" required="required" /><br>
+      </select>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Classify as spam or ham</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
