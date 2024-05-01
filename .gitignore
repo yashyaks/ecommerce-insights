@@ -1,0 +1,12 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+env/
+*.py[cod]
+
+# IPython Notebook
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
