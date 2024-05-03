@@ -14,8 +14,8 @@ from sklearn.pipeline import Pipeline
 def custom_tokenizer(text, max_words=50):
     tokens = text.split()[:max_words]
     return tokens
-unknown_types = sio.get_untrusted_types(file="./tfidf_vectorizer.skops")
-vectorizer = sio.load("./tfidf_vectorizer.skops", trusted=unknown_types)
+unknown_types = sio.get_untrusted_types(file="tfidf_vectorizer.skops")
+vectorizer = sio.load("tfidf_vectorizer.skops", trusted=unknown_types)
 
 # Load model
 unknown_types = sio.get_untrusted_types(file="logistic_sentiment.skops")
