@@ -116,7 +116,7 @@ def make_autopct(values):
 
 # Função para plotagem de gráfico de rosca em relação a uma variávei específica do dataset
 def donut_plot(df, col, ax, label_names=None, text='', colors=['crimson', 'navy'], circle_radius=0.8,
-            title=f'Gráfico de Rosca', flag_ruido=0):
+            title=f'Donut Plot', flag_ruido=0):
     """
     Etapas:
         1. definição de funções úteis para mostrar rótulos em valor absoluto e porcentagem
