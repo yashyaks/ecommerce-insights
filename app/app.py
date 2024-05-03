@@ -14,12 +14,12 @@ from sklearn.pipeline import Pipeline
 def custom_tokenizer(text, max_words=50):
     tokens = text.split()[:max_words]
     return tokens
-unknown_types = sio.get_untrusted_types(file="../models/tfidf_vectorizer.skops")
-vectorizer = sio.load("../models/tfidf_vectorizer.skops", trusted=unknown_types)
+unknown_types = sio.get_untrusted_types(file="tfidf_vectorizer.skops")
+vectorizer = sio.load("tfidf_vectorizer.skops", trusted=unknown_types)
 
 # Load model
-unknown_types = sio.get_untrusted_types(file="../models/logistic_sentiment.skops")
-model = sio.load("../models/logistic_sentiment.skops", trusted=unknown_types)
+unknown_types = sio.get_untrusted_types(file="logistic_sentiment.skops")
+model = sio.load("logistic_sentiment.skops", trusted=unknown_types)
 
 # Download stopwords
 pt_stopwords = stopwords.words('portuguese')
